@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - node-version: "18"
+            eslint-version: "8.57.1"
+          - node-version: "20"
+            eslint-version: "9"
+          - node-version: "20"
+            eslint-version: "10"
+          - node-version: "24"
+            eslint-version: "10"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install matrix ESLint version
+        run: npm install --no-save --ignore-scripts eslint@${{ matrix.eslint-version }}
+
+      - name: Verify package
+        run: npm run verify
