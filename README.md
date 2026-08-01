@@ -1,5 +1,9 @@
 # eslint-plugin-compact-guards
 
+[![CI](https://github.com/danielshawellis/eslint-plugin-compact-guards/actions/workflows/ci.yml/badge.svg)](https://github.com/danielshawellis/eslint-plugin-compact-guards/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-compact-guards)](https://www.npmjs.com/package/eslint-plugin-compact-guards)
+[![license](https://img.shields.io/npm/l/eslint-plugin-compact-guards)](https://github.com/danielshawellis/eslint-plugin-compact-guards/blob/main/LICENSE)
+
 An ESLint plugin that enforces **compact guard clauses**: no braces, with the
 `return`/`throw` keyword on the same line as the closing parenthesis of the `if`
 condition.
