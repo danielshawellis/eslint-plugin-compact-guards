@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-01
+
+### Fixed
+
+- Correct GitHub repository URLs in package metadata and the `compact-guard-clause`
+  rule documentation link.
+- README rule documentation link now points to GitHub so it works on the npm
+  package page (relative links resolve against npmjs.com and 404).
+
+## [0.1.0] - 2026-08-01
+
 ### Added
 
 - Initial implementation of the `compact-guard-clause` rule.

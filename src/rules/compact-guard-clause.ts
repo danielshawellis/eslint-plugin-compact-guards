@@ -10,7 +10,7 @@ function isGuardStatement(node: Node | null | undefined): node is GuardStatement
 }
 
 const DOCS_URL =
-  "https://github.com/eslint-plugin-compact-guards/eslint-plugin-compact-guards/blob/main/docs/rules/compact-guard-clause.md";
+  "https://github.com/danielshawellis/eslint-plugin-compact-guards/blob/main/docs/rules/compact-guard-clause.md";
 
 const rule: Rule.RuleModule = {
   meta: {
