@@ -1,12 +1,8 @@
 import { RuleTester } from "eslint";
 import rule from "../../src/rules/compact-guard-clause.js";
+import { ruleTesterConfig } from "../helpers/eslint-version.js";
 
-const ruleTester = new RuleTester({
-  languageOptions: {
-    ecmaVersion: 2022,
-    sourceType: "module",
-  },
-});
+const ruleTester = new RuleTester(ruleTesterConfig());
 
 ruleTester.run("compact-guard-clause", rule, {
   valid: [

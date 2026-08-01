@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-compact-guards",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ESLint plugin enforcing compact guard clauses: no braces, with the return/throw keyword on the same line as the closing parenthesis of the condition.",
   "keywords": [
     "eslint",
@@ -11,6 +11,14 @@
     "code-style"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielshawellis/eslint-plugin-compact-guards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danielshawellis/eslint-plugin-compact-guards/issues"
+  },
+  "homepage": "https://github.com/danielshawellis/eslint-plugin-compact-guards#readme",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

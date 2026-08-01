@@ -50,8 +50,8 @@ export default [
 
 ## Rule
 
-- [`compact-guard-clause`](./docs/rules/compact-guard-clause.md) — enforce compact
-  guard clauses (fixable).
+- [`compact-guard-clause`](https://github.com/danielshawellis/eslint-plugin-compact-guards/blob/main/docs/rules/compact-guard-clause.md) —
+  enforce compact guard clauses (fixable).
 
 ## Development
 

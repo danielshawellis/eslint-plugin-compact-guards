@@ -1,4 +1,4 @@
-import type { Rule } from "eslint";
+import type { Rule, SourceCode } from "eslint";
 import type { Comment, IfStatement, Node, ReturnStatement, ThrowStatement } from "estree";
 
 type GuardStatement = ReturnStatement | ThrowStatement;
@@ -9,8 +9,17 @@ function isGuardStatement(node: Node | null | undefined): node is GuardStatement
   );
 }
 
+function getSourceCodeFromContext(context: Rule.RuleContext): SourceCode {
+  if (context.sourceCode) {
+    return context.sourceCode;
+  }
+
+  // ESLint 8.x — getSourceCode() was removed from RuleContext types in ESLint 10.
+  return (context as Rule.RuleContext & { getSourceCode(): SourceCode }).getSourceCode();
+}
+
 const DOCS_URL =
-  "https://github.com/eslint-plugin-compact-guards/eslint-plugin-compact-guards/blob/main/docs/rules/compact-guard-clause.md";
+  "https://github.com/danielshawellis/eslint-plugin-compact-guards/blob/main/docs/rules/compact-guard-clause.md";
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -31,7 +40,7 @@ const rule: Rule.RuleModule = {
     },
   },
   create(context) {
-    const sourceCode = context.sourceCode ?? context.getSourceCode();
+    const sourceCode = getSourceCodeFromContext(context);
 
     return {
       IfStatement(node: IfStatement) {
