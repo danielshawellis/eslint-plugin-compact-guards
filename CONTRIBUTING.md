@@ -18,6 +18,13 @@ npm run verify
 5. `node scripts/test-packed-package.mjs` — packs the package and verifies the
    ESM and CommonJS entry points import correctly
 
+## Dependency updates
+
+Dependabot opens one weekly PR for minor and patch updates to dev dependencies,
+and one for GitHub Actions. Major version bumps are ignored automatically —
+handle those in a single manual tooling PR when you are ready (for example
+ESLint 10, Vitest 4, or TypeScript 7 once `typescript-eslint` supports it).
+
 ## Release process
 
 Releases are published to npm through GitHub Actions using **npm Trusted
