@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-08-01
+
+### Changed
+
+- README badges for CI status, npm version, and license.
+- Dependabot groups weekly minor/patch dev-dependency updates and ignores major
+  bumps; documented in `CONTRIBUTING.md`.
+
 ## [0.1.1] - 2026-08-01
 
 ### Fixed
