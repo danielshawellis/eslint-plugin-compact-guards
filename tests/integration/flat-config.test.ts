@@ -1,14 +1,18 @@
-import { Linter } from "eslint";
+import type { Linter } from "eslint";
 import { describe, expect, it } from "vitest";
 import plugin from "../../src/index.js";
+import {
+  createFlatConfigLinter,
+  linterFlatConfigLanguageOptions,
+} from "../helpers/eslint-version.js";
 
-const linter = new Linter();
+const linter = createFlatConfigLinter();
 
 const config: Linter.Config[] = [
   {
     plugins: { "compact-guards": plugin },
     rules: { "compact-guards/compact-guard-clause": "error" },
-    languageOptions: { ecmaVersion: 2022, sourceType: "module" },
+    ...linterFlatConfigLanguageOptions(),
   },
 ];
 
